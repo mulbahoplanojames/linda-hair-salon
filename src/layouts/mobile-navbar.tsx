@@ -1,24 +1,49 @@
-````ts
-<div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+"use client";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { allNavItems } from "@/data/nav-data";
+import { Menu, ShoppingBag } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+export function MobileNavbar() {
+  const pathname = usePathname();
+
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        {/* <Button variant="outline"></Button> */}
+        <button
+          type="button"
+          className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
+        >
+          <span className="sr-only">Open main menu</span>
+          <Menu className="h-6 w-6" aria-hidden="true" />
+        </button>
+      </SheetTrigger>
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle>Edit profile</SheetTitle>
+        </SheetHeader>
+        <div>
           <div className="flex items-center justify-between">
-            <Link
-              href="/"
-              className="-m-1.5 p-1.5 text-xl font-bold"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Elegance
-              </span>
-              <span>Salon</span>
-            </Link>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <X className="h-6 w-6" aria-hidden="true" />
-            </button>
+            <SheetClose asChild>
+              <Link href="/" className="-m-1.5 p-1.5 text-xl font-bold">
+                <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                  Elegance
+                </span>
+                <span>Salon</span>
+              </Link>
+            </SheetClose>
           </div>
           <div className="mt-6 flow-">
             <div className="-my-6 divide-y divide-gray-500/10">
@@ -32,7 +57,7 @@
                         ? "text-primary"
                         : "text-foreground/80"
                     }`}
-                    onClick={() => setMobileMenuOpen(false)}
+                    // onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
@@ -50,7 +75,6 @@
                     className="relative"
                     onClick={() => {
                       //   setIsCartOpen(true);
-                      setMobileMenuOpen(false);
                     }}
                   >
                     <ShoppingBag className="h-5 w-5" />
@@ -69,5 +93,12 @@
             </div>
           </div>
         </div>
-        ```
-````
+        <SheetFooter>
+          <SheetClose asChild>
+            <Button type="submit">Save changes</Button>
+          </SheetClose>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
+  );
+}
