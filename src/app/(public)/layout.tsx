@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "../globals.css";
 import Navbar from "@/layouts/navbar";
 import { ThemeProvider } from "@/context/theme-provider";
+import { CartProvider } from "@/context/cart-context";
+import { CartDrawer } from "@/components/cart-drawer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,10 +22,13 @@ export default function RootLayout({
       enableSystem
       disableTransitionOnChange
     >
-      <div className="min-h-screen flex flex-col space-y-4">
-        <Navbar />
-        <div className="flex-1">{children}</div>
-      </div>
+      <CartProvider>
+        <div className="min-h-screen flex flex-col space-y-4">
+          <Navbar />
+          <div className="flex-1">{children}</div>
+        </div>
+        <CartDrawer />
+      </CartProvider>
     </ThemeProvider>
   );
 }

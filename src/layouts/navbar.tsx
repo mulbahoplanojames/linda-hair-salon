@@ -18,11 +18,12 @@ import { ThemeCustomizer } from "@/components/theme-customizer";
 import { ThemeModeToggle } from "@/components/theme-mode-toggle";
 import { MobileNavbar } from "./mobile-navbar";
 import { extraNavItems, navigation } from "@/data/nav-data";
+import { useCart } from "@/context/cart-context";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  //   const { cart, setIsCartOpen } = useCart();
+  const { items, setIsCartOpen } = useCart();
 
   // Track scroll position for header styling
   useEffect(() => {
@@ -34,17 +35,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  //   const cartItemCount = cart.items.reduce(
-  //     (sum, item) => sum + item.quantity,
-  //     0
-  //   );
+  const cartItemCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <header
       className={`sticky top-0 z-40 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-background/90 backdrop-blur-md shadow-sm"
-          : "bg-background/80 backdrop-blur-sm"
+          ? "bg-background/90 backdrop-blur-2xl shadow-sm"
+          : "bg-background/90 backdrop-blur-md shadow-sm"
       }`}
     >
       <nav
@@ -107,26 +105,26 @@ export default function Navbar() {
             variant="ghost"
             size="icon"
             className="relative"
-            // onClick={() => setIsCartOpen(true)}
+            onClick={() => setIsCartOpen(true)}
           >
             <ShoppingBag className="h-5 w-5" />
             <span className="sr-only">Open cart</span>
             <AnimatePresence>
-              {/* {cartItemCount > 0 && ( */}
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0 }}
-                className="absolute -top-2 -right-2"
-              >
-                <Badge
-                  variant="destructive"
-                  className="h-5 w-5 p-0 flex items-center justify-center rounded-full"
+              {cartItemCount > 0 && (
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0 }}
+                  className="absolute -top-2 -right-2"
                 >
-                  {/* {cartItemCount} */}
-                </Badge>
-              </motion.div>
-              {/* )} */}
+                  <Badge
+                    variant="destructive"
+                    className="h-5 w-5 p-0 flex items-center justify-center rounded-full"
+                  >
+                    {cartItemCount}
+                  </Badge>
+                </motion.div>
+              )}
             </AnimatePresence>
           </Button>
           <Button className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white cursor-pointer">
@@ -134,19 +132,6 @@ export default function Navbar() {
           </Button>
         </div>
       </nav>
-
-      {/* Mobile menu */}
-      {/* <div
-        className={`lg:hidden ${
-          mobileMenuOpen ? "fixed inset-0 z-50" : "hidden"
-        }`}
-      >
-        <div
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm"
-          onClick={() => setMobileMenuOpen(false)}
-        />
-        hellojd
-      </div> */}
     </header>
   );
 }
