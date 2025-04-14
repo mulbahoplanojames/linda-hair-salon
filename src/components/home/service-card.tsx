@@ -49,7 +49,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       </CardContent>
       <CardFooter className="flex justify-between pb-4">
         <Button variant="outline" asChild>
-          <Link href={`/services/${service.id}`}>Learn More</Link>
+          <Link href={`/services/${service.slug}`}>Learn More</Link>
         </Button>
         <Button asChild className="text-white">
           <Link href={`/booking?service=${service.id}`}>

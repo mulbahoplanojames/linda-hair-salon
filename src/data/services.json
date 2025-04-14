@@ -36,6 +36,7 @@
   {
     "id": "3",
     "name": "Highlights & Balayage",
+    "slug": "highlights-and-balayage",
     "category": "Coloring",
     "description": "Add dimension and depth to your hair with our highlighting and balayage services. Our stylists are trained in the latest techniques to create natural-looking, sun-kissed results that enhance your features and complement your skin tone.",
     "shortDescription": "Dimensional, natural-looking highlights",
@@ -47,6 +48,7 @@
   {
     "id": "4",
     "name": "Keratin Treatment",
+    "slug": "keratin-treatment",
     "category": "Treatments",
     "description": "Smooth, frizz-free hair that lasts for months with our premium keratin treatments. This service reduces frizz, enhances shine, and makes styling easier while maintaining your hair's natural movement and body.",
     "shortDescription": "Long-lasting frizz control",
@@ -58,6 +60,7 @@
   {
     "id": "5",
     "name": "Deep Conditioning",
+    "slug": "deep-conditioning",
     "category": "Treatments",
     "description": "Restore moisture and vitality to dry, damaged hair with our intensive conditioning treatments. Using high-quality, professional-grade products, we'll help repair damage, strengthen strands, and improve overall hair health.",
     "shortDescription": "Intensive moisture and repair",
@@ -69,6 +72,7 @@
   {
     "id": "6",
     "name": "Bridal Hair",
+    "slug": "bridal-hair",
     "category": "Styling",
     "description": "Look your best on your special day with our bridal hair styling services. Includes a consultation, trial run, and day-of styling to ensure your hair is perfect for your wedding day. We work with you to create a look that complements your dress, veil, and overall wedding aesthetic.",
     "shortDescription": "Special occasion styling",
