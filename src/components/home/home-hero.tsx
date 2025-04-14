@@ -24,8 +24,11 @@ const HomeHero = () => {
           delay={0.2}
           className="max-w-2xl text-white"
         >
+          <div className="inline-block px-3 py-1 rounded-full bg-white/20 text-sm font-medium backdrop-blur-sm mb-5">
+            The Ultimate Shopping Experience
+          </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-6">
-            Discover Your{" "}
+            Discover Your
             <AnimatedGradientText
               text="Perfect Style"
               from="from-white"
@@ -40,7 +43,7 @@ const HomeHero = () => {
             <Button
               size="lg"
               asChild
-              className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300 transform hover:scale-105 text-white"
             >
               <Link href="/booking">
                 Book Appointment <Calendar className="ml-2 h-4 w-4" />
