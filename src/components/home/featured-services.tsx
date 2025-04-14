@@ -6,7 +6,7 @@ import Link from "next/link";
 import ServiceCard from "./service-card";
 import services from "@/data/services.json";
 
-const Services = () => {
+const FeaturedServices = () => {
   return (
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,4 +49,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default FeaturedServices;

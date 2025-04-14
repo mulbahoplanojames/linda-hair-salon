@@ -10,3 +10,12 @@ export interface Service {
   featured: boolean;
   image: string;
 }
+
+export type Testimonial = {
+  id: string;
+  name: string;
+  avatar: string;
+  service: string;
+  text: string;
+  rating: number;
+};

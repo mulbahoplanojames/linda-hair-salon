@@ -4,6 +4,7 @@ import Navbar from "@/layouts/navbar";
 import { ThemeProvider } from "@/context/theme-provider";
 import { CartProvider } from "@/context/cart-context";
 import { CartDrawer } from "@/components/cart-drawer";
+import Footer from "@/layouts/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,6 +27,7 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col space-y-4">
           <Navbar />
           <div className="flex-1">{children}</div>
+          <Footer />
         </div>
         <CartDrawer />
       </CartProvider>
