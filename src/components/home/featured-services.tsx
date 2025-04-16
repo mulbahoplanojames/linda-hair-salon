@@ -3,7 +3,7 @@ import { AnimatedSection } from "../animated-section";
 import { AnimatedGradientText } from "../animated-gradient-text";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import ServiceCard from "./service-card";
+import ServiceCard from "../service-card";
 import services from "@/data/services.json";
 
 const FeaturedServices = () => {

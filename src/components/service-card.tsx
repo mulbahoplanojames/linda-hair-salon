@@ -28,7 +28,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           className="object-cover"
         />
         {service.featured && (
-          <Badge className="absolute top-2 right-2">Featured</Badge>
+          <Badge className="absolute top-2 right-2 text-white">Featured</Badge>
         )}
       </div>
       <CardHeader>

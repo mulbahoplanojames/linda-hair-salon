@@ -1,6 +1,8 @@
 import { Brush, Droplet, Scissors, Sparkles } from "lucide-react";
 import Image from "next/image";
 import services from "@/data/services.json";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import ServiceCard from "../service-card";
 
 const ServicesHero = () => {
   const categories = [...new Set(services.map((service) => service.category))];
@@ -48,8 +50,8 @@ const ServicesHero = () => {
 
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Tabs defaultValue={categories[0]} className="w-full">
-            <TabsList className=" flex flex-wrap justify-center mb-12">
+          <Tabs defaultValue={categories[0]} className="w-full ">
+            <TabsList className=" flex flex-wrap justify-center mb-12 mx-auto">
               {categories.map((category) => (
                 <TabsTrigger
                   key={category}
