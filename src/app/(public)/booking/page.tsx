@@ -1,4 +1,6 @@
-// import BookingForm from "@/components/booking-form"
+import AdditionalBookingInfo from "@/components/booking/additional-booking-info";
+import BookingForm from "@/components/booking/booking-form";
+import Hero from "@/components/hero";
 import {
   Card,
   CardContent,
@@ -16,20 +18,12 @@ export const metadata = {
 export default function BookingPage() {
   return (
     <main>
-      {/* Hero Section */}
-      <section className="bg-muted py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">
-              Book Your Appointment
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Schedule your next visit with our expert stylists. Choose your
-              preferred service, stylist, and time.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Book Your Appointment"
+        description="  Schedule your next visit with our expert stylists. Choose your
+              preferred service, stylist, and time."
+        image="/placeholder.svg?height=1080&width=1920"
+      />
 
       {/* Booking Form Section */}
       <section className="py-16">
@@ -45,7 +39,9 @@ export default function BookingPage() {
                     Select your preferred service, stylist, and time slot
                   </CardDescription>
                 </CardHeader>
-                <CardContent>{/* <BookingForm /> */}</CardContent>
+                <CardContent>
+                  <BookingForm />
+                </CardContent>
               </Card>
             </div>
             <div className="space-y-8">
@@ -73,8 +69,8 @@ export default function BookingPage() {
                     <div>
                       <h3 className="font-medium">Stylist Preference</h3>
                       <p className="text-sm text-muted-foreground">
-                        Select your preferred stylist or choose "Any Available"
-                        for the first available appointment.
+                        Select your preferred stylist or choose &apos;Any
+                        Available&apos; for the first available appointment.
                       </p>
                     </div>
                   </div>
@@ -85,7 +81,7 @@ export default function BookingPage() {
                     <div>
                       <h3 className="font-medium">Date Selection</h3>
                       <p className="text-sm text-muted-foreground">
-                        Choose a date that works for you. We're open Monday
+                        Choose a date that works for you. We&apos;re open Monday
                         through Saturday.
                       </p>
                     </div>
@@ -97,7 +93,8 @@ export default function BookingPage() {
                     <div>
                       <h3 className="font-medium">Time Selection</h3>
                       <p className="text-sm text-muted-foreground">
-                        Select a time slot that's convenient for your schedule.
+                        Select a time slot that&apos;s convenient for your
+                        schedule.
                       </p>
                     </div>
                   </div>
@@ -135,6 +132,7 @@ export default function BookingPage() {
           </div>
         </div>
       </section>
+      <AdditionalBookingInfo />
     </main>
   );
 }
