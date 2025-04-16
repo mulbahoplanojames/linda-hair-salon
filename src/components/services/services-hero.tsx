@@ -3,6 +3,13 @@ import Image from "next/image";
 import services from "@/data/services.json";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import ServiceCard from "../service-card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { faq } from "@/data/data";
 
 const ServicesHero = () => {
   const categories = [...new Set(services.map((service) => service.category))];
@@ -51,7 +58,7 @@ const ServicesHero = () => {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue={categories[0]} className="w-full ">
-            <TabsList className=" flex flex-wrap justify-center mb-12 mx-auto">
+            <TabsList className=" flex flex-wrap justify-center gap-4 mb-12 mx-auto">
               {categories.map((category) => (
                 <TabsTrigger
                   key={category}
@@ -91,6 +98,49 @@ const ServicesHero = () => {
               </TabsContent>
             ))}
           </Tabs>
+        </div>
+      </section>
+
+      {/* Additional Information */}
+      <section className="py-16 bg-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-2xl font-bold mb-6">Our Approach</h2>
+              <p className="text-white mb-4">
+                At Linda Salon, we believe that every client deserves a
+                personalized experience. That&apos;s why we start each service
+                with a thorough consultation to understand your goals,
+                lifestyle, and preferences.
+              </p>
+              <p className="text-white mb-4">
+                Our stylists are trained to consider your face shape, hair
+                texture, and maintenance preferences when recommending styles
+                and treatments. We want you to love your hair not just when you
+                leave the salon, but every day.
+              </p>
+              <p className="text-white">
+                We use only premium products that are gentle on your hair and
+                the environment, ensuring that you receive the highest quality
+                service possible.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div>
+                {faq.map((faq) => (
+                  <Accordion type="single" collapsible key={faq.id}>
+                    <AccordionItem value={faq.id}>
+                      <AccordionTrigger>{faq.question}</AccordionTrigger>
+                      <AccordionContent>{faq.answer}</AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>

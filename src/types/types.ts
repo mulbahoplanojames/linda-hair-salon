@@ -31,3 +31,18 @@ export interface Service {
   featured: boolean;
   image: string;
 }
+
+export interface Stylist {
+  id: string;
+  name: string;
+  role: string;
+  bio: string;
+  specialties: string[];
+  image: string;
+  rating: number;
+}
+
+export interface TimeSlot {
+  value: string;
+  label: string;
+}
