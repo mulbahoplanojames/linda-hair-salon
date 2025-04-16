@@ -97,7 +97,7 @@ export default function BookingForm() {
               <FormLabel>Service</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
                 </FormControl>
@@ -125,7 +125,7 @@ export default function BookingForm() {
               <FormLabel>Stylist</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select a stylist" />
                   </SelectTrigger>
                 </FormControl>
@@ -202,7 +202,7 @@ export default function BookingForm() {
                   defaultValue={field.value}
                 >
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select a time" />
                       <Clock className="h-4 w-4 opacity-50" />
                     </SelectTrigger>
