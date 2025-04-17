@@ -34,22 +34,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import services from "@/data/services.json";
 import { stylists, timeSlots } from "@/data/data";
-
-const formSchema = z.object({
-  service: z.string({
-    required_error: "Please select a service",
-  }),
-  stylist: z.string({
-    required_error: "Please select a stylist",
-  }),
-  date: z.date({
-    required_error: "Please select a date",
-  }),
-  time: z.string({
-    required_error: "Please select a time",
-  }),
-  notes: z.string().optional(),
-});
+import { bookingFormSchema } from "@/schema/zod-schema";
 
 export default function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -58,8 +43,8 @@ export default function BookingForm() {
 
   const defaultServiceId = searchParams.get("service");
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof bookingFormSchema>>({
+    resolver: zodResolver(bookingFormSchema),
     defaultValues: {
       service: defaultServiceId || "",
       stylist: "",
@@ -67,7 +52,7 @@ export default function BookingForm() {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof bookingFormSchema>) {
     setIsSubmitting(true);
 
     try {

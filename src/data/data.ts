@@ -1,4 +1,4 @@
-import { Stylist, TimeSlot } from "@/types/types";
+import { GalleryImage, Stylist, TimeSlot } from "@/types/types";
 
 export const stylists: Stylist[] = [
   {
@@ -105,5 +105,62 @@ export const faq = [
     question: "How can I maintain my color between appointments?",
     answer:
       "Use color-safe shampoo and conditioner, avoid excessive heat styling, and protect your hair from sun exposure.",
+  },
+];
+
+export const galleryImages: GalleryImage[] = [
+  {
+    id: "1",
+    src: "/placeholder.svg?height=600&width=600",
+    alt: "Haircut transformation",
+    category: "Haircuts",
+  },
+  {
+    id: "2",
+    src: "/placeholder.svg?height=600&width=600",
+    alt: "Color transformation",
+    category: "Coloring",
+  },
+  {
+    id: "3",
+    src: "/placeholder.svg?height=600&width=600",
+    alt: "Styling for special occasion",
+    category: "Styling",
+  },
+  {
+    id: "4",
+    src: "/placeholder.svg?height=600&width=600",
+    alt: "Balayage highlights",
+    category: "Coloring",
+  },
+  {
+    id: "5",
+    src: "/placeholder.svg?height=600&width=600",
+    alt: "Men's haircut",
+    category: "Haircuts",
+  },
+  {
+    id: "6",
+    src: "/placeholder.svg?height=600&width=600",
+    alt: "Bridal hairstyle",
+    category: "Styling",
+  },
+  {
+    id: "7",
+    src: "/placeholder.svg?height=600&width=600",
+    alt: "Curly hair styling",
+    category: "Styling",
+  },
+  {
+    id: "8",
+    src: "/placeholder.svg?height=600&width=600",
+    alt: "Hair treatment",
+    category: "Treatments",
+  },
+  {
+    id: "9",
+    src: "/placeholder.svg?height=600&width=600",
+    alt: "Blonde transformation",
+    category: "Coloring",
   },
 ];
