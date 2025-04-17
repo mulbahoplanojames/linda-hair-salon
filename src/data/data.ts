@@ -210,3 +210,109 @@ export const hairColors = [
   { id: "color9", name: "Pastel Purple", color: "#c8a2c8" },
   { id: "color10", name: "Teal Blue", color: "#008080" },
 ];
+
+export // Quiz questions
+const questions = [
+  {
+    id: "q1",
+    question: "What is your hair type?",
+    options: [
+      { id: "straight", label: "Straight" },
+      { id: "wavy", label: "Wavy" },
+      { id: "curly", label: "Curly" },
+      { id: "coily", label: "Coily/Kinky" },
+    ],
+  },
+  {
+    id: "q2",
+    question: "What services are you primarily interested in?",
+    options: [
+      { id: "haircuts", label: "Haircuts & Styling" },
+      { id: "color", label: "Color Services" },
+      { id: "treatments", label: "Treatments & Repairs" },
+      { id: "extensions", label: "Extensions & Braiding" },
+    ],
+  },
+  {
+    id: "q3",
+    question: "What's your preferred stylist experience level?",
+    options: [
+      { id: "junior", label: "Junior Stylist (More Affordable)" },
+      { id: "senior", label: "Senior Stylist (More Experienced)" },
+      { id: "master", label: "Master Stylist (Top Tier)" },
+      { id: "any", label: "No Preference" },
+    ],
+  },
+  {
+    id: "q4",
+    question: "What's your styling personality?",
+    options: [
+      { id: "classic", label: "Classic & Timeless" },
+      { id: "trendy", label: "Trendy & Fashion-Forward" },
+      { id: "edgy", label: "Edgy & Creative" },
+      { id: "natural", label: "Natural & Low-Maintenance" },
+    ],
+  },
+  {
+    id: "q5",
+    question: "How often do you typically visit a salon?",
+    options: [
+      { id: "frequent", label: "Every 4-6 Weeks" },
+      { id: "regular", label: "Every 2-3 Months" },
+      { id: "occasional", label: "A Few Times a Year" },
+      { id: "rarely", label: "Only for Special Occasions" },
+    ],
+  },
+];
+
+// Extended stylist data with matching criteria
+export const stylistMatching = [
+  {
+    id: "1",
+    name: "Emma Johnson",
+    specialties: ["Haircuts", "Styling", "Color"],
+    matchCriteria: {
+      hairTypes: ["straight", "wavy"],
+      services: ["haircuts", "color"],
+      experience: "senior",
+      style: ["classic", "trendy"],
+      visitFrequency: ["frequent", "regular"],
+    },
+  },
+  {
+    id: "2",
+    name: "Michael Chen",
+    specialties: ["Color", "Highlights", "Balayage"],
+    matchCriteria: {
+      hairTypes: ["straight", "wavy", "curly"],
+      services: ["color", "treatments"],
+      experience: "master",
+      style: ["trendy", "edgy"],
+      visitFrequency: ["frequent", "regular", "occasional"],
+    },
+  },
+  {
+    id: "3",
+    name: "Sophia Rodriguez",
+    specialties: ["Curly Hair", "Treatments", "Natural Styling"],
+    matchCriteria: {
+      hairTypes: ["curly", "coily"],
+      services: ["haircuts", "treatments"],
+      experience: "senior",
+      style: ["natural", "classic"],
+      visitFrequency: ["regular", "occasional"],
+    },
+  },
+  {
+    id: "4",
+    name: "James Wilson",
+    specialties: ["Avant-garde", "Editorial", "Precision Cuts"],
+    matchCriteria: {
+      hairTypes: ["straight", "wavy", "curly"],
+      services: ["haircuts", "color"],
+      experience: "master",
+      style: ["edgy", "trendy"],
+      visitFrequency: ["frequent", "occasional"],
+    },
+  },
+];
