@@ -19,52 +19,8 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { motion } from "framer-motion";
 import HowItWorks from "./how-it-works";
-
-const hairstyles = [
-  {
-    id: "style1",
-    name: "Bob Cut",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    id: "style2",
-    name: "Long Layers",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    id: "style3",
-    name: "Pixie Cut",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    id: "style4",
-    name: "Beach Waves",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    id: "style5",
-    name: "Blunt Bangs",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-  {
-    id: "style6",
-    name: "Shag Cut",
-    image: "/placeholder.svg?height=150&width=150",
-  },
-];
-
-const hairColors = [
-  { id: "color1", name: "Natural Black", color: "#0f0f0f" },
-  { id: "color2", name: "Dark Brown", color: "#3b2417" },
-  { id: "color3", name: "Chestnut", color: "#754c24" },
-  { id: "color4", name: "Caramel Blonde", color: "#c19a6b" },
-  { id: "color5", name: "Platinum Blonde", color: "#e6d7ab" },
-  { id: "color6", name: "Auburn Red", color: "#a52a2a" },
-  { id: "color7", name: "Vibrant Red", color: "#d93636" },
-  { id: "color8", name: "Rose Gold", color: "#eea9a1" },
-  { id: "color9", name: "Pastel Purple", color: "#c8a2c8" },
-  { id: "color10", name: "Teal Blue", color: "#008080" },
-];
+import { hairColors, hairstyles } from "@/data/data";
+import Hero from "@/components/hero";
 
 export default function VirtualTryOnClient() {
   const [userImage, setUserImage] = useState<string | null>(null);
@@ -158,23 +114,13 @@ export default function VirtualTryOnClient() {
 
   return (
     <main>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary/10 to-primary/5 py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">
-              <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Virtual Hair Try-On
-              </span>
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Upload your photo or use your camera to virtually try different
+      <Hero
+        title="Virtual Hair Try-On"
+        description="Upload your photo or use your camera to virtually try different
               hairstyles and colors before your appointment. Find your perfect
-              look with our interactive tool!
-            </p>
-          </div>
-        </div>
-      </section>
+              look with our interactive tool!"
+        image="/placeholder.svg?height=400&width=400"
+      />
 
       {/* Try-On Section */}
       <section className="py-16">

@@ -164,3 +164,49 @@ export const galleryImages: GalleryImage[] = [
     category: "Coloring",
   },
 ];
+
+export const hairstyles = [
+  {
+    id: "style1",
+    name: "Bob Cut",
+    image: "/placeholder.svg?height=150&width=150",
+  },
+  {
+    id: "style2",
+    name: "Long Layers",
+    image: "/placeholder.svg?height=150&width=150",
+  },
+  {
+    id: "style3",
+    name: "Pixie Cut",
+    image: "/placeholder.svg?height=150&width=150",
+  },
+  {
+    id: "style4",
+    name: "Beach Waves",
+    image: "/placeholder.svg?height=150&width=150",
+  },
+  {
+    id: "style5",
+    name: "Blunt Bangs",
+    image: "/placeholder.svg?height=150&width=150",
+  },
+  {
+    id: "style6",
+    name: "Shag Cut",
+    image: "/placeholder.svg?height=150&width=150",
+  },
+];
+
+export const hairColors = [
+  { id: "color1", name: "Natural Black", color: "#0f0f0f" },
+  { id: "color2", name: "Dark Brown", color: "#3b2417" },
+  { id: "color3", name: "Chestnut", color: "#754c24" },
+  { id: "color4", name: "Caramel Blonde", color: "#c19a6b" },
+  { id: "color5", name: "Platinum Blonde", color: "#e6d7ab" },
+  { id: "color6", name: "Auburn Red", color: "#a52a2a" },
+  { id: "color7", name: "Vibrant Red", color: "#d93636" },
+  { id: "color8", name: "Rose Gold", color: "#eea9a1" },
+  { id: "color9", name: "Pastel Purple", color: "#c8a2c8" },
+  { id: "color10", name: "Teal Blue", color: "#008080" },
+];
