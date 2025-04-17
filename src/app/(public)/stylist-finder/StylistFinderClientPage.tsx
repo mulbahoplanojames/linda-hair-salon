@@ -97,7 +97,9 @@ export default function StylistFinderClientPage() {
     });
 
     // Sort by match score (highest first)
-    const sortedMatches = scores.sort((a, b) => b.matchScore - a.matchScore);
+    const sortedMatches: typeof stylistMatching = scores.sort(
+      (a, b) => b.matchScore - a.matchScore
+    );
 
     setMatchedStylists(sortedMatches);
     setQuizComplete(true);

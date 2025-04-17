@@ -11,7 +11,6 @@ export const navigation = [
 export const extraNavItems = [
   { name: "Virtual Try-On", href: "/virtual-try-on" },
   { name: "Stylist Finder", href: "/stylist-finder" },
-  { name: "Loyalty", href: "/loyalty" },
 ];
 
 export const allNavItems = [...navigation, ...extraNavItems];
