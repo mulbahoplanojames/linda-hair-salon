@@ -1,12 +1,4 @@
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  Car,
-  CreditCard,
-  Smile,
-} from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -14,8 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import AdditionalSalonInfo from "@/components/contact/additional-salon-info";
+import ContactFAQ from "./contact-faq";
+import Hero from "@/components/hero";
+import ContactForm from "./contact-form";
 
 export const metadata = {
   title: "Contact Us - Linda Hair Salon",
@@ -25,21 +19,11 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <main>
-      {/* Hero Section */}
-      <section className="bg-muted py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">
-              Contact Us
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Have questions or need assistance? We&apos;re here to help. Reach
-              out to our team for appointments, inquiries, or feedback.
-            </p>
-          </div>
-        </div>
-      </section>
-
+      <Hero
+        title="Contact Us"
+        description="Have questions or need assistance? We're here to help. Reach out to our team for appointments, inquiries, or feedback."
+        image="/placeholder.svg?height=1080&width=1920"
+      />
       {/* Contact Information */}
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +37,9 @@ export default function ContactPage() {
                     soon as possible.
                   </CardDescription>
                 </CardHeader>
-                <CardContent>{/* <ContactForm /> */}</CardContent>
+                <CardContent>
+                  <ContactForm />
+                </CardContent>
               </Card>
             </div>
 
@@ -121,139 +107,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* Additional Information */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-              Salon Information
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to know before your visit
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-2">
-                  <Car className="h-5 w-5 text-primary" />
-                  <CardTitle className="text-xl">Parking</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Free parking is available in our dedicated lot behind the
-                  salon. Street parking is also available with a 2-hour limit.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-2">
-                  <CreditCard className="h-5 w-5 text-primary" />
-                  <CardTitle className="text-xl">Payment Options</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  We accept all major credit cards, cash, and mobile payment
-                  options including Apple Pay and Google Pay.
-                </p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-2">
-                  <Smile className="h-5 w-5 text-primary" />
-                  <CardTitle className="text-xl">First Visit</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  New clients should arrive 15 minutes early to complete a
-                  consultation form. Receive 10% off your first service!
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Find answers to our most commonly asked questions
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div>
-              <h3 className="font-bold text-lg mb-2">
-                What is your cancellation policy?
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                We require 24 hours notice for cancellations. Late cancellations
-                or no-shows may be subject to a fee equal to 50% of the
-                scheduled service.
-              </p>
-
-              <h3 className="font-bold text-lg mb-2">
-                Do you offer gift cards?
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Yes! Gift cards are available for purchase in-store or online
-                and can be used for any service or product.
-              </p>
-
-              <h3 className="font-bold text-lg mb-2">
-                What if I&apos;m running late?
-              </h3>
-              <p className="text-muted-foreground">
-                Please call us if you&apos;re running late. We&apos;ll do our
-                best to accommodate you, but arrivals more than 15 minutes late
-                may need to be rescheduled.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg mb-2">
-                Do you offer consultations?
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Yes, we offer complimentary 15-minute consultations for new
-                clients or for existing clients considering a significant
-                change.
-              </p>
-
-              <h3 className="font-bold text-lg mb-2">
-                What products do you use?
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                We use professional-grade products from brands like Aveda,
-                Oribe, and Kérastase. All products used are available for
-                purchase in our salon.
-              </p>
-
-              <h3 className="font-bold text-lg mb-2">
-                Do you have a referral program?
-              </h3>
-              <p className="text-muted-foreground">
-                Yes! Refer a friend and receive 15% off your next service when
-                they book their first appointment.
-              </p>
-            </div>
-          </div>
-          <div className="text-center mt-12">
-            <Button asChild>
-              <Link href="/booking">Book an Appointment</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <AdditionalSalonInfo />
+      <ContactFAQ />
     </main>
   );
 }
