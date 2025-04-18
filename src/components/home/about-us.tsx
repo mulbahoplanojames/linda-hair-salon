@@ -51,7 +51,7 @@ const AboutUs = () => {
             className="relative md:h-[500px] h-[300px] rounded-lg overflow-hidden"
           >
             <Image
-              src="/placeholder.svg?height=800&width=600"
+              src="/bg_2.jpg"
               alt="Salon interior"
               fill
               className="object-cover"

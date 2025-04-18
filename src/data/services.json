@@ -9,7 +9,7 @@
     "price": 65,
     "duration": 60,
     "featured": true,
-    "image": "/placeholder.svg?height=400&width=600",
+    "image": "/haircult.jpg",
     "details": [
       {
         "id": "1",
@@ -31,7 +31,7 @@
     "price": 120,
     "duration": 120,
     "featured": true,
-    "image": "/placeholder.svg?height=400&width=600"
+    "image": "/bg_4.jpg"
   },
   {
     "id": "3",
@@ -43,7 +43,7 @@
     "price": 150,
     "duration": 150,
     "featured": true,
-    "image": "/placeholder.svg?height=400&width=600"
+    "image": "/balayage.jpg"
   },
   {
     "id": "4",
@@ -55,7 +55,7 @@
     "price": 200,
     "duration": 180,
     "featured": false,
-    "image": "/placeholder.svg?height=400&width=600"
+    "image": "/keratin.jpg"
   },
   {
     "id": "5",
@@ -67,7 +67,7 @@
     "price": 45,
     "duration": 45,
     "featured": false,
-    "image": "/placeholder.svg?height=400&width=600"
+    "image": "/conditioning.jpg"
   },
   {
     "id": "6",
@@ -79,6 +79,6 @@
     "price": 150,
     "duration": 90,
     "featured": false,
-    "image": "/placeholder.svg?height=400&width=600"
+    "image": "/bridal.jpg"
   }
 ]

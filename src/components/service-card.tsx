@@ -20,7 +20,7 @@ interface ServiceCardProps {
 export default function ServiceCard({ service }: ServiceCardProps) {
   return (
     <Card className="overflow-hidden flex flex-col h-full p-0">
-      <div className="relative h-48">
+      <div className="relative h-56">
         <Image
           src={service.image || "/placeholder.svg?height=400&width=600"}
           alt={service.name}
