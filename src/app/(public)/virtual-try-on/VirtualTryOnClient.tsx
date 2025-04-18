@@ -109,7 +109,7 @@ export default function VirtualTryOnClient() {
   useEffect(() => {
     return () => {
       if (videoRef.current && videoRef.current.srcObject) {
-        const stream = videoRef.current.srcObject as MediaStream;
+        const stream = videoRef.current?.srcObject as MediaStream;
         const tracks = stream.getTracks();
         tracks.forEach((track) => track.stop());
       }

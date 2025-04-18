@@ -53,3 +53,28 @@ export interface GalleryImage {
   alt: string;
   category: string;
 }
+
+export interface CategoryHeroProps {
+  title: string;
+  description: string;
+  image: string;
+  cta: string;
+}
+
+export interface MatchStyle {
+  id: string;
+  name: string;
+  role?: string | undefined;
+  specialties: string[];
+  bio?: string | undefined;
+  image?: string | undefined;
+  rating?: number | undefined;
+  matchScore: number;
+  matchCriteria: {
+    hairTypes: string[];
+    services: string[];
+    experience: string;
+    style: string[];
+    visitFrequency: string[];
+  };
+}

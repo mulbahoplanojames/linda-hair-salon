@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useCart } from "@/context/cart-context";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -37,39 +37,16 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { toast } from "sonner";
-
-const formSchema = z.object({
-  firstName: z
-    .string()
-    .min(2, { message: "First name must be at least 2 characters" }),
-  lastName: z
-    .string()
-    .min(2, { message: "Last name must be at least 2 characters" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
-  phone: z.string().min(10, { message: "Please enter a valid phone number" }),
-  address: z
-    .string()
-    .min(5, { message: "Address must be at least 5 characters" }),
-  city: z.string().min(2, { message: "City must be at least 2 characters" }),
-  state: z.string().min(2, { message: "State must be at least 2 characters" }),
-  zipCode: z
-    .string()
-    .min(5, { message: "Zip code must be at least 5 characters" }),
-  paymentMethod: z.enum(["credit-card", "paypal"]),
-  cardNumber: z.string().optional(),
-  cardExpiry: z.string().optional(),
-  cardCvc: z.string().optional(),
-  notes: z.string().optional(),
-});
+import { checkoutFormSchema } from "@/schema/zod-schema";
 
 export default function CheckoutPage() {
-  const { items, clearCart } = useCart();
+  const { items, clearCart, totalPrice } = useCart();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
-  const router = useRouter();
+  // const router = useRouter();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof checkoutFormSchema>>({
+    resolver: zodResolver(checkoutFormSchema),
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -89,7 +66,7 @@ export default function CheckoutPage() {
 
   const paymentMethod = form.watch("paymentMethod");
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof checkoutFormSchema>) {
     if (items.length === 0) {
       toast("Your cart is empty", {
         description: "Please add items to your cart before checking out.",
@@ -115,12 +92,12 @@ export default function CheckoutPage() {
           state: values.state,
           zipCode: values.zipCode,
         },
-        items: cart.items,
+        items: items,
         totals: {
-          subtotal: cart.subtotal,
-          tax: cart.tax,
-          shipping: cart.shipping,
-          total: cart.total,
+          subtotal: 0.0,
+          tax: 0.0,
+          shipping: "free",
+          total: totalPrice,
         },
         paymentMethod: values.paymentMethod,
         notes: values.notes,
@@ -129,25 +106,6 @@ export default function CheckoutPage() {
       console.log("Order data:", orderData);
 
       // Mock API call
-      fetch("https://api.example.com/orders", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderData),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log("Success:", data);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
 
       // Show success state
       setIsComplete(true);
@@ -156,11 +114,9 @@ export default function CheckoutPage() {
       clearCart();
     } catch (error) {
       console.error(error);
-      toast({
-        title: "Something went wrong",
+      toast("Something went wrong", {
         description:
           "There was an error processing your order. Please try again.",
-        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -176,8 +132,8 @@ export default function CheckoutPage() {
           </div>
           <h1 className="text-3xl font-bold mb-4">Order Confirmed!</h1>
           <p className="text-lg text-muted-foreground mb-8">
-            Thank you for your purchase. We've sent a confirmation email with
-            your order details.
+            Thank you for your purchase. We&apos;ve sent a confirmation email
+            with your order details.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild>
@@ -222,12 +178,12 @@ export default function CheckoutPage() {
                     Order Summary
                   </CardTitle>
                   <CardDescription>
-                    {cart.items.length}{" "}
-                    {cart.items.length === 1 ? "item" : "items"} in your cart
+                    {items.length}
+                    {items.length === 1 ? "item" : "items"} in your cart
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  {cart.items.length === 0 ? (
+                  {items.length === 0 ? (
                     <div className="text-center py-6">
                       <p className="text-muted-foreground mb-4">
                         Your cart is empty
@@ -239,26 +195,28 @@ export default function CheckoutPage() {
                   ) : (
                     <>
                       <ul className="space-y-4 max-h-80 overflow-y-auto pr-2">
-                        {cart.items.map((item) => (
-                          <li key={item.id} className="flex gap-4">
+                        {items.map((item) => (
+                          <li key={item.product.id} className="flex gap-4">
                             <div className="relative h-16 w-16 rounded-md overflow-hidden bg-muted flex-shrink-0">
                               <Image
-                                src={item.image || "/placeholder.svg"}
-                                alt={item.name}
+                                src={item.product.image || "/placeholder.svg"}
+                                alt={item.product.name}
                                 fill
                                 className="object-cover"
                               />
                             </div>
                             <div className="flex-1 min-w-0">
                               <h4 className="font-medium text-sm truncate">
-                                {item.name}
+                                {item.product.name}
                               </h4>
                               <div className="flex justify-between items-center mt-1">
                                 <p className="text-sm text-muted-foreground">
                                   Qty: {item.quantity}
                                 </p>
                                 <p className="font-medium">
-                                  {formatCurrency(item.price * item.quantity)}
+                                  {formatCurrency(
+                                    item.product.price * item.quantity
+                                  )}
                                 </p>
                               </div>
                             </div>
@@ -273,26 +231,22 @@ export default function CheckoutPage() {
                           <span className="text-muted-foreground">
                             Subtotal
                           </span>
-                          <span>{formatCurrency(cart.subtotal)}</span>
+                          <span>{0.0}</span>
                         </div>
                         <div className="flex justify-between text-sm">
                           <span className="text-muted-foreground">Tax</span>
-                          <span>{formatCurrency(cart.tax)}</span>
+                          <span>{0.0}</span>
                         </div>
                         <div className="flex justify-between text-sm">
                           <span className="text-muted-foreground">
                             Shipping
                           </span>
-                          <span>
-                            {cart.shipping === 0
-                              ? "Free"
-                              : formatCurrency(cart.shipping)}
-                          </span>
+                          <span>Free</span>
                         </div>
                         <Separator />
                         <div className="flex justify-between font-medium">
                           <span>Total</span>
-                          <span>{formatCurrency(cart.total)}</span>
+                          <span>{totalPrice}</span>
                         </div>
                       </div>
                     </>
@@ -563,8 +517,8 @@ export default function CheckoutPage() {
                       </Button>
                       <Button
                         type="submit"
-                        className="sm:flex-1"
-                        disabled={isSubmitting || cart.items.length === 0}
+                        className="sm:flex-1 text-white"
+                        disabled={isSubmitting || items.length === 0}
                       >
                         {isSubmitting ? "Processing..." : "Place Order"}
                       </Button>

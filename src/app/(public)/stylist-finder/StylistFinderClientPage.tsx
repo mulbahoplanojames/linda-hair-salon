@@ -19,11 +19,12 @@ import { ArrowRight, ArrowLeft, CheckCircle, Star } from "lucide-react";
 import { questions, stylistMatching, stylists } from "@/data/data";
 import Hero from "@/components/hero";
 import Benefits from "./benefits";
+import { MatchStyle } from "@/types/types";
 
 export default function StylistFinderClientPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [matchedStylists, setMatchedStylists] = useState<any[]>([]);
+  const [matchedStylists, setMatchedStylists] = useState<MatchStyle[]>([]);
   const [quizComplete, setQuizComplete] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
@@ -97,9 +98,7 @@ export default function StylistFinderClientPage() {
     });
 
     // Sort by match score (highest first)
-    const sortedMatches: typeof stylistMatching = scores.sort(
-      (a, b) => b.matchScore - a.matchScore
-    );
+    const sortedMatches = scores.sort((a, b) => b.matchScore - a.matchScore);
 
     setMatchedStylists(sortedMatches);
     setQuizComplete(true);
@@ -267,7 +266,7 @@ export default function StylistFinderClientPage() {
                                 <Star
                                   key={i}
                                   className={`h-4 w-4 ${
-                                    i < Math.floor(stylist.rating)
+                                    i < Math.floor(stylist.rating!)
                                       ? "fill-amber-500 text-amber-500"
                                       : "text-muted"
                                   }`}

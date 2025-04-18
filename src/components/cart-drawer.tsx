@@ -212,8 +212,8 @@ export function CartDrawer() {
                     <Button variant="outline" onClick={closeCart}>
                       Continue Shopping
                     </Button>
-                    <Button asChild>
-                      <Link href="/checkout" onClick={closeCart}>
+                    <Button asChild className="text-white">
+                      <Link href="/products/checkout" onClick={closeCart}>
                         Checkout
                       </Link>
                     </Button>

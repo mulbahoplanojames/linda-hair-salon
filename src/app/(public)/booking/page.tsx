@@ -9,9 +9,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Scissors, Clock, Calendar, Users, CreditCard } from "lucide-react";
+import { Suspense } from "react";
 
 export const metadata = {
-  title: "Book Appointment - Elegance Hair Salon",
+  title: "Book Appointment - Linda Hair Salon",
   description: "Schedule your next hair appointment with our expert stylists",
 };
 
@@ -40,7 +41,9 @@ export default function BookingPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <BookingForm />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <BookingForm />
+                  </Suspense>
                 </CardContent>
               </Card>
             </div>
