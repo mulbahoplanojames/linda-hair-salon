@@ -123,7 +123,7 @@ export default function VirtualTryOnClient() {
         description="Upload your photo or use your camera to virtually try different
               hairstyles and colors before your appointment. Find your perfect
               look with our interactive tool!"
-        image="/placeholder.svg?height=400&width=400"
+        image="/bg_1.jpg"
       />
 
       {/* Try-On Section */}

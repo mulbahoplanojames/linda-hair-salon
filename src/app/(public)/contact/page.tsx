@@ -22,7 +22,7 @@ export default function ContactPage() {
       <Hero
         title="Contact Us"
         description="Have questions or need assistance? We're here to help. Reach out to our team for appointments, inquiries, or feedback."
-        image="/placeholder.svg?height=1080&width=1920"
+        image="/bg_1.jpg"
       />
       {/* Contact Information */}
       <section className="py-16">
