@@ -1,5 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import products from "@/data/products.json";
+import { Product } from "@/types/product-type";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -11,3 +13,10 @@ export const formatCurrency = (amount: number) => {
     currency: "USD",
   }).format(amount);
 };
+
+// Function to get related products
+export function getRelatedProducts(product: Product, limit = 4): Product[] {
+  return products
+    .filter((p) => p.category === product.category && p.id !== product.id)
+    .slice(0, limit);
+}

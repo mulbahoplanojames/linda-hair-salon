@@ -62,5 +62,37 @@
       "text": "Limited Time",
       "color": "bg-blue-500"
     }
+  },
+  {
+    "id": "2",
+    "name": "Volumizing Conditioner",
+    "brand": "Elegance",
+    "category": "Conditioner",
+    "description": "Add body and bounce to fine or limp hair with this lightweight conditioner that detangles without weighing hair down.",
+    "price": 26.99,
+    "rating": 4.7,
+    "unit": 23,
+    "featured": true,
+    "image": "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743097487/IMG_1269_1_gcq5jf.jpg",
+    "images": [
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743097489/IMG_1275_1_ujtzf3.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743097495/IMG_1264_fw7vmb.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743097497/IMG_1262_ukssra.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743096927/IMG_1240_n8kxjv.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743096929/IMG_1177_1_hbotam.jpg"
+    ],
+    "features": [
+      "Breathable mesh fabric for maximum airflow",
+      "Stretchy design for a full range of motion",
+      "Fast-drying material to keep you cool and dry",
+      "Sleeveless design for added freedom of movement",
+      "Ideal for gym sessions, running, or high-intensity activities"
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": ["yellow", "green", "lightblue", "black", "purple"],
+    "badge": {
+      "text": "Limited Time",
+      "color": "bg-blue-500"
+    }
   }
 ]

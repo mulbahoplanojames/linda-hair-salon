@@ -13,9 +13,10 @@ export function CartDrawer() {
     items,
     isCartOpen,
     setIsCartOpen,
-    // removeFromCart,
-    // updateQuantity,
+    removeFromCart,
+    updateQuantity,
     clearCart,
+    totalPrice,
   } = useCart();
 
   const closeCart = () => setIsCartOpen(false);
@@ -105,14 +106,35 @@ export function CartDrawer() {
                             <p className="text-primary font-medium mt-1">
                               {formatCurrency(item.product.price)}
                             </p>
+                            <div className="grid grid-cols-2 gap-3">
+                              {item.size && (
+                                <div className="mt-1 mb-2">
+                                  <span className="text-xs bg-primary px-2 py-1 rounded dark:text-white">
+                                    Size: {item.size}
+                                  </span>
+                                </div>
+                              )}
+                              {item.color && (
+                                <div className="mt-1 mb-2">
+                                  <span className="text-xs bg-primary px-2 py-1  dark:text-white">
+                                    Color: {item.color}
+                                  </span>
+                                </div>
+                              )}
+                            </div>
                             <div className="flex items-center mt-2">
                               <Button
                                 variant="outline"
                                 size="icon"
                                 className="h-7 w-7"
-                                // onClick={() =>
-                                //   updateQuantity(item.id, item.quantity - 1)
-                                // }
+                                onClick={() =>
+                                  updateQuantity(
+                                    item.product.id,
+                                    item.quantity - 1,
+                                    item.size,
+                                    item.color
+                                  )
+                                }
                               >
                                 <Minus className="h-3 w-3" />
                                 <span className="sr-only">
@@ -126,9 +148,14 @@ export function CartDrawer() {
                                 variant="outline"
                                 size="icon"
                                 className="h-7 w-7"
-                                // onClick={() =>
-                                //   updateQuantity(item.id, item.quantity + 1)
-                                // }
+                                onClick={() =>
+                                  updateQuantity(
+                                    item.product.id,
+                                    item.quantity + 1,
+                                    item.size,
+                                    item.color
+                                  )
+                                }
                               >
                                 <Plus className="h-3 w-3" />
                                 <span className="sr-only">
@@ -142,7 +169,13 @@ export function CartDrawer() {
                               variant="ghost"
                               size="icon"
                               className="h-7 w-7 text-muted-foreground hover:text-destructive"
-                              // onClick={() => removeFromCart(item.id)}
+                              onClick={() =>
+                                removeFromCart(
+                                  item.product.id,
+                                  item.size,
+                                  item.color
+                                )
+                              }
                             >
                               <Trash2 className="h-4 w-4" />
                               <span className="sr-only">Remove item</span>
@@ -157,19 +190,12 @@ export function CartDrawer() {
                 <div className="border-t p-4 space-y-4">
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Subtotal</span>
-                      {/* <span>{formatCurrency(items.subtotal)}</span> */}
-                      <span>Subtotal will go here</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Tax</span>
-                      {/* <span>{formatCurrency(items.tax)}</span> */}
-                      <span>Tax will go here</span>
+                      <span>Free</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">
-                        Shipping will come here
-                      </span>
+                      <span className="text-muted-foreground">Shipping</span>
+                      Free
                       {/* <span>
                         {items.shipping === 0
                           ? "Free"
@@ -178,8 +204,7 @@ export function CartDrawer() {
                     </div>
                     <div className="flex justify-between font-medium pt-2 border-t">
                       <span>Total </span>
-                      {/* <span>{formatCurrency(items.total)}</span> */}
-                      <span>Total will come here</span>
+                      <span>{totalPrice.toFixed(2)}</span>
                     </div>
                   </div>
 

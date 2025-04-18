@@ -119,7 +119,7 @@ const ProductClient = ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-      <div className="container mx-auto px-4 pb-14 pt-28">
+      <div className="container mx-auto px-4 pb-14 pt-6">
         {/* Breadcrumb */}
         <div className="flex items-center text-sm text-gray-500 dark:text-gray-100 mb-8">
           <Link href="/" className="hover:text-blue-500">

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-// import ProductCard from "@/components/product-card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
