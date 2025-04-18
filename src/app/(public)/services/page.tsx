@@ -89,7 +89,9 @@ const Services = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl font-bold mb-6">Our Approach</h2>
+              <h2 className="text-2xl font-bold mb-6 text-white">
+                Our Approach
+              </h2>
               <p className="text-white mb-4">
                 At Linda Salon, we believe that every client deserves a
                 personalized experience. That&apos;s why we start each service
@@ -109,15 +111,19 @@ const Services = () => {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl font-bold mb-6">
+              <h2 className="text-2xl font-bold mb-6 text-white">
                 Frequently Asked Questions
               </h2>
               <div>
                 {faq.map((faq) => (
                   <Accordion type="single" collapsible key={faq.id}>
                     <AccordionItem value={faq.id}>
-                      <AccordionTrigger>{faq.question}</AccordionTrigger>
-                      <AccordionContent>{faq.answer}</AccordionContent>
+                      <AccordionTrigger className="text-white text-lg">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-white">
+                        {faq.answer}
+                      </AccordionContent>
                     </AccordionItem>
                   </Accordion>
                 ))}

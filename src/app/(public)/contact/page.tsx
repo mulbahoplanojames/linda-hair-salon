@@ -74,7 +74,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium text-lg">Email</h3>
                       <p className="text-muted-foreground">
-                        info@elegancesalon.com
+                        info@lindasalon.com
                       </p>
                     </div>
                   </div>
@@ -99,7 +99,16 @@ export default function ContactPage() {
                 <div className="aspect-video bg-muted rounded-lg overflow-hidden">
                   {/* Replace with actual Google Maps embed */}
                   <div className="w-full h-full flex items-center justify-center bg-muted">
-                    <p className="text-muted-foreground">Google Maps Embed</p>
+                    {/* <p className="text-muted-foreground">Google Maps Embed</p> */}
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7313.254795994849!2d30.053396262142712!3d-1.9190688144095234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca3f75b7b8b91%3A0xc9ab953c704fa9d3!2sKigali%20Independent%20University!5e0!3m2!1sen!2srw!4v1744965870176!5m2!1sen!2srw"
+                      width="600"
+                      height="450"
+                      allowFullScreen
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                   </div>
                 </div>
               </div>

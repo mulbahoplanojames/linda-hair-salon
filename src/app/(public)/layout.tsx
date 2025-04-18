@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/context/theme-provider";
 import { CartProvider } from "@/context/cart-context";
 import { CartDrawer } from "@/components/cart-drawer";
 import Footer from "@/layouts/Footer";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Navbar />
           <div className="flex-1">{children}</div>
           <Footer />
+          <Toaster position="bottom-right" />
         </div>
         <CartDrawer />
       </CartProvider>

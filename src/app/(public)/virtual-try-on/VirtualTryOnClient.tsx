@@ -21,6 +21,7 @@ import { motion } from "framer-motion";
 import HowItWorks from "./how-it-works";
 import { hairColors, hairstyles } from "@/data/data";
 import Hero from "@/components/hero";
+import { toast } from "sonner";
 
 export default function VirtualTryOnClient() {
   const [userImage, setUserImage] = useState<string | null>(null);
@@ -54,6 +55,9 @@ export default function VirtualTryOnClient() {
         videoRef.current.srcObject = stream;
       }
     } catch (err) {
+      toast("Error accessing camera.", {
+        description: "Please allow access to your camera from your browser.",
+      });
       console.error("Error accessing camera:", err);
       setIsCapturing(false);
     }
@@ -128,7 +132,7 @@ export default function VirtualTryOnClient() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Image Upload/Display Area */}
             <div className="lg:col-span-2">
-              <Card className="overflow-hidden">
+              <Card className="overflow-hidden p-0">
                 <CardContent className="p-0">
                   {!userImage && !isCapturing ? (
                     <div className="flex flex-col items-center justify-center h-[500px] bg-muted/30 p-8">
@@ -199,7 +203,7 @@ export default function VirtualTryOnClient() {
                       {selectedStyle && (
                         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
                           {/* This is where the hairstyle overlay would be rendered */}
-                          {/* In a real implementation, this would use advanced image processing */}
+                          {/* In future updates, this would use advanced image processing */}
                           <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
                             {
                               hairstyles.find(
@@ -214,7 +218,7 @@ export default function VirtualTryOnClient() {
                           variant="secondary"
                           size="sm"
                           onClick={resetImage}
-                          className="flex items-center gap-1"
+                          className="flex items-center gap-1 text-black"
                         >
                           <RefreshCw className="h-3 w-3" />
                           Reset
@@ -223,7 +227,7 @@ export default function VirtualTryOnClient() {
                           variant="secondary"
                           size="sm"
                           onClick={downloadImage}
-                          className="flex items-center gap-1"
+                          className="flex items-center gap-1 text-black"
                         >
                           <Download className="h-3 w-3" />
                           Save
@@ -231,7 +235,7 @@ export default function VirtualTryOnClient() {
                         <Button
                           variant="secondary"
                           size="sm"
-                          className="flex items-center gap-1"
+                          className="flex items-center gap-1 text-black"
                         >
                           <Share2 className="h-3 w-3" />
                           Share
