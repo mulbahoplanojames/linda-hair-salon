@@ -186,17 +186,17 @@ export default function StylistFinderClientPage() {
                 <Button
                   onClick={handleNext}
                   disabled={!selectedOption}
-                  className="flex items-center"
+                  className="flex items-center text-white"
                 >
                   {currentQuestion < questions.length - 1 ? (
                     <>
                       Next
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <ArrowRight className="ml-2 size-4" />
                     </>
                   ) : (
                     <>
                       See My Matches
-                      <CheckCircle className="ml-2 h-4 w-4" />
+                      <CheckCircle className="ml-2 size-4" />
                     </>
                   )}
                 </Button>
@@ -235,7 +235,7 @@ export default function StylistFinderClientPage() {
                             className="object-cover"
                           />
                           {index === 0 && (
-                            <div className="absolute top-2 left-2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                            <div className="absolute top-2 left-2 bg-primary  px-3 py-1 rounded-full text-sm font-medium text-white">
                               Best Match
                             </div>
                           )}
@@ -297,15 +297,15 @@ export default function StylistFinderClientPage() {
                           </div>
 
                           <div className="flex gap-2">
-                            <Button asChild>
+                            <Button asChild className="text-white">
                               <Link href={`/booking?stylist=${stylist.id}`}>
                                 Book with {stylist.name.split(" ")[0]}
                               </Link>
                             </Button>
-                            <Button variant="outline" asChild disabled>
-                              <Link href={`/stylists/${stylist.id}`}>
-                                View Profile
-                              </Link>
+                            <Button variant="outline" disabled>
+                              {/* <Link href={`/stylists/${stylist.id}`}> */}
+                              View Profile
+                              {/* </Link> */}
                             </Button>
                           </div>
                         </div>

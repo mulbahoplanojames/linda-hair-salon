@@ -67,7 +67,7 @@ const ContactFAQ = () => {
           </div>
         </div>
         <div className="text-center mt-12">
-          <Button asChild>
+          <Button asChild className="text-white cursor-pointer">
             <Link href="/booking">Book an Appointment</Link>
           </Button>
         </div>

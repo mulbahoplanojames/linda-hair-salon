@@ -147,7 +147,7 @@ export default function VirtualTryOnClient() {
                       <div className="flex flex-col sm:flex-row gap-4">
                         <Button
                           onClick={() => fileInputRef.current?.click()}
-                          className="flex items-center gap-2"
+                          className="flex items-center gap-2 text-white"
                         >
                           <Upload className="h-4 w-4" />
                           Upload Photo

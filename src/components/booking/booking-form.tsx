@@ -231,7 +231,11 @@ export default function BookingForm() {
           )}
         />
 
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Button
+          type="submit"
+          className="w-full text-white cursor-pointer"
+          disabled={isSubmitting}
+        >
           {isSubmitting ? "Booking..." : "Book Appointment"}
         </Button>
       </form>
