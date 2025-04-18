@@ -1,9 +1,8 @@
 "use client";
 
 import { useCart } from "@/context/cart-context";
-import { Product } from "@/types/types";
+import { Product } from "@/types/product-type";
 import { Heart } from "lucide-react";
-import React from "react";
 
 const FavoriateButton = ({ product }: { product: Product }) => {
   const { favorites, toggleFavorite } = useCart();

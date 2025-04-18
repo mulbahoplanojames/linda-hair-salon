@@ -30,6 +30,7 @@ import { motion } from "framer-motion";
 import { Product } from "@/types/product-type";
 import products from "@/data/products.json";
 import ProductCard from "@/components/products/product-card";
+import Hero from "@/components/hero";
 
 export default function ProductsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -77,25 +78,10 @@ export default function ProductsPage() {
         product.price >= priceRange[0] && product.price <= priceRange[1]
     );
 
-    // Stock filter
-    // if (showInStock) {
-    //   result = result.filter((product) => product.inStock);
-    // }
-
     // Featured filter
     if (showFeatured) {
       result = result.filter((product) => product.featured);
     }
-
-    // Best sellers filter
-    // if (showBestSellers) {
-    //   result = result.filter((product) => product.bestSeller);
-    // }
-
-    // New filter
-    // if (showNew) {
-    //   result = result.filter((product) => product.new);
-    // }
 
     // Sort products
     switch (sortBy) {
@@ -117,10 +103,6 @@ export default function ProductsPage() {
         result = [...result].sort((a, b) => {
           if (a.featured && !b.featured) return -1;
           if (!a.featured && b.featured) return 1;
-          // if (a.bestSeller && !b.bestSeller) return -1;
-          // if (!a.bestSeller && b.bestSeller) return 1;
-          // if (a.new && !b.new) return -1;
-          // if (!a.new && b.new) return 1;
           return 0;
         });
     }
@@ -161,22 +143,12 @@ export default function ProductsPage() {
 
   return (
     <main>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary/10 to-primary/5 py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">
-              <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Shop Our Products
-              </span>
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Discover our premium hair care products, specially selected by our
-              stylists to help you maintain salon-quality hair at home.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title="Shop Our Products"
+        description="Discover our premium hair care products, specially selected by our
+              stylists to help you maintain salon-quality hair at home."
+        image="/placeholder.svg?height=1080&width=1920"
+      />
 
       {/* Products Section */}
       <section className="py-16">
@@ -361,63 +333,6 @@ export default function ProductsPage() {
               ))}
             </motion.div>
           )}
-        </div>
-      </section>
-
-      {/* Featured Collections */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-              Featured Collections
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Explore our curated collections for specific hair needs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="relative overflow-hidden rounded-lg group h-64">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/60 mix-blend-multiply" />
-              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                <h3 className="text-xl font-bold mb-2">Color Protection</h3>
-                <p className="mb-4">
-                  Products designed to maintain your color and prevent fading
-                </p>
-                <Button variant="secondary" size="sm" className="w-fit">
-                  Explore Collection
-                </Button>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-lg group h-64">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-800/80 to-purple-600/60 mix-blend-multiply" />
-              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                <h3 className="text-xl font-bold mb-2">Curl Enhancing</h3>
-                <p className="mb-4">
-                  Define and enhance your natural curls with these specialized
-                  products
-                </p>
-                <Button variant="secondary" size="sm" className="w-fit">
-                  Explore Collection
-                </Button>
-              </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-lg group h-64">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-800/80 to-amber-600/60 mix-blend-multiply" />
-              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                <h3 className="text-xl font-bold mb-2">Repair & Restore</h3>
-                <p className="mb-4">
-                  Intensive treatments to repair damaged hair and restore
-                  vitality
-                </p>
-                <Button variant="secondary" size="sm" className="w-fit">
-                  Explore Collection
-                </Button>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </main>
