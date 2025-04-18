@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "name": "Hydrating Shampoo",
+    "brand": "Linda",
+    "category": "Shampoo",
+    "description": "A gentle, hydrating shampoo that cleanses while adding moisture to dry or damaged hair. Infused with argan oil and aloe vera for maximum hydration.",
+    "price": 24.99,
+    "rating": 4.8,
+    "unit": 23,
+    "featured": true,
+    "image": "https://res.cloudinary.com/dx2ub50ms/image/upload/v1742748818/orange_geometric_lightweight_quater_zip_pullover_front_y1iqux.jpg",
+    "images": [
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1742748820/orange_geometric_lightweight_quater_zip_pullover_back_hmmjsg.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1742748828/gray_geometric_lightweight_quater_zip_pullover_front_yaalt9.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1742748830/gray_geometric_lightweight_quater_zip_pullover_back_bbppd0.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1742748838/black_geometric_lightweight_quater_zip_pullover_front_mfmdkq.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1742748837/black_lightweight_quater_zip_pullover_back_uathfm.jpg"
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": ["orange", "gray", "black"],
+    "features": [
+      "Lightweight water-resistant fabric",
+      "Reflective details for visibility",
+      "Ventilation panels for breathability",
+      "Zippered pockets for secure storage",
+      "Adjustable hood and cuffs"
+    ],
+    "badge": {
+      "text": "Just Arrived",
+      "color": "bg-blue-500"
+    }
+  },
+  {
+    "id": "2",
+    "name": "Volumizing Conditioner",
+    "brand": "Elegance",
+    "category": "Conditioner",
+    "description": "Add body and bounce to fine or limp hair with this lightweight conditioner that detangles without weighing hair down.",
+    "price": 26.99,
+    "rating": 4.7,
+    "unit": 23,
+    "featured": true,
+    "image": "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743097487/IMG_1269_1_gcq5jf.jpg",
+    "images": [
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743097489/IMG_1275_1_ujtzf3.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743097495/IMG_1264_fw7vmb.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743097497/IMG_1262_ukssra.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743096927/IMG_1240_n8kxjv.jpg",
+      "https://res.cloudinary.com/dx2ub50ms/image/upload/v1743096929/IMG_1177_1_hbotam.jpg"
+    ],
+    "features": [
+      "Breathable mesh fabric for maximum airflow",
+      "Stretchy design for a full range of motion",
+      "Fast-drying material to keep you cool and dry",
+      "Sleeveless design for added freedom of movement",
+      "Ideal for gym sessions, running, or high-intensity activities"
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "colors": ["yellow", "green", "lightblue", "black", "purple"],
+    "badge": {
+      "text": "Limited Time",
+      "color": "bg-blue-500"
+    }
+  }
+]
