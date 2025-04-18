@@ -146,7 +146,7 @@ export default function ProductsPage() {
         title="Shop Our Products"
         description="Discover our premium hair care products, specially selected by our
               stylists to help you maintain salon-quality hair at home."
-        image="/placeholder.svg?height=1080&width=1920"
+        image="/bg_1.jpg"
       />
 
       {/* Products Section */}
