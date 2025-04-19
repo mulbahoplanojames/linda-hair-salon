@@ -22,7 +22,7 @@ const colorThemes = [
   },
   {
     name: "Lavender",
-    primary: "oklch(75.13% 0.128 301.02)",
+    primary: "oklch(75.13% 0.128 301.08)",
     secondary: "oklch(0.984 0.003 247.858)",
   },
   {
@@ -47,8 +47,7 @@ const colorThemes = [
   },
   {
     name: "Mint",
-
-    primary: "oklch(86.87% 0.128 173.12)",
+    primary: "oklch(60% 0.128 173.12)",
     secondary: "oklch(0.984 0.003 247.858)",
   },
   {
