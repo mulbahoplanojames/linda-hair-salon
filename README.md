@@ -101,7 +101,7 @@ _A live demo will be available soon. Stay tuned for deployment updates!_
 - **Other:**
   - PostCSS, ESLint, pnpm
 - **Backend:**
-  - _No backend API included; forms simulate API calls (easy to connect to your backend)._
+  - _No backend API included yet; forms simulate API calls (easy to connect to the backend)._
 - **Cloud/Media:**
   - Cloudinary-ready for images (see `next.config.ts`)
 
@@ -144,7 +144,7 @@ pnpm dev
 
 ## API Reference
 
-This project does not include a backend API. All forms are currently mocked for demo purposes.
+This project does not include a backend API yet. All forms are currently mocked for demo purposes.
 In future updates, to connect to a real backend, i will include the simulated API calls in the booking, checkout, and contact forms with your endpoints.
 
 ---
