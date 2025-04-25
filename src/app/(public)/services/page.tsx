@@ -93,7 +93,7 @@ const Services = () => {
                 Our Approach
               </h2>
               <p className="text-white mb-4">
-                At Linda Salon, we believe that every client deserves a
+                AtPrince Salon, we believe that every client deserves a
                 personalized experience. That&apos;s why we start each service
                 with a thorough consultation to understand your goals,
                 lifestyle, and preferences.

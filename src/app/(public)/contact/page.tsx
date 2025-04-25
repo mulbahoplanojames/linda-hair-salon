@@ -12,7 +12,7 @@ import Hero from "@/components/hero";
 import ContactForm from "./contact-form";
 
 export const metadata = {
-  title: "Contact Us - Linda Hair Salon",
+  title: "Contact Us -Prince Hair Salon",
   description: "Get in touch with our team for inquiries or support",
 };
 

@@ -12,7 +12,7 @@ import { Scissors, Clock, Calendar, Users, CreditCard } from "lucide-react";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Book Appointment - Linda Hair Salon",
+  title: "Book Appointment -Prince Hair Salon",
   description: "Schedule your next hair appointment with our expert stylists",
 };
 

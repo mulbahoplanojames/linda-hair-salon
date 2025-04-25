@@ -14,7 +14,7 @@ const AboutUs = () => {
               About <AnimatedGradientText text="Linda Salon" />
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Founded in 2010, Linda Salon has been providing premium hair care
+              Founded in 2010,Prince Salon has been providing premium hair care
               services with a focus on personalized attention and exceptional
               results. Our team of skilled stylists is dedicated to helping you
               look and feel your best.

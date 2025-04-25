@@ -1,4 +1,4 @@
-# Linda Hair Salon ✂️💇‍♀️
+#Prince Hair Salon ✂️💇‍♀️
 
 > The digital front desk for a modern beauty experience. Book appointments, explore services and products, and connect with top stylists—all in one place.
 
